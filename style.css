@@ -1,0 +1,21 @@
+body{
+    background-color: black;
+}
+
+#text::before{
+    color: rgb(0, 255, 0);
+    content: attr(data-content);
+    white-space: pre;
+    float: left;
+    padding-right: 5px;
+}
+
+#text{
+    color: white;
+    outline: none;
+    word-break: break-all;
+}
+
+.history{
+    caret-color: transparent;
+}
