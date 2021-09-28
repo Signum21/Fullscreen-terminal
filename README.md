@@ -1,6 +1,6 @@
 # Fullscreen terminal
 
-Netlify: https://kind-leakey-cd5a50.netlify.app/
+Netlify: https://reverent-hypatia-022c63.netlify.app/
 
 The terminal takes 4 commands
 
