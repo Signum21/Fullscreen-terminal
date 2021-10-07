@@ -1,4 +1,4 @@
-import { myConsole } from "./objects.js";
+import { myConsole } from "./$objects.js";
 
 const $text = document.getElementById("text");
 $text.setAttribute("data-content", myConsole.pre);
@@ -35,13 +35,7 @@ $text.addEventListener('keydown', function (event) {
 
 $text.addEventListener('keyup', function (event) {
     if (event.key == "Enter") {
-        const lines = this.innerHTML.split("<div>");
-
-        if(lines[lines.length - 1] != "<br></div>"){
-            this.removeChild(this.lastChild);
-            this.removeChild(this.lastChild);
-            this.innerHTML += (lines.length > 2 ? "<div>" + command + "</div>" : command + "&nbsp;") + "<div><br></div>";
-        }
+        fixWordSplit(this);
 
         if(command != ""){
             myConsole.history.push(command);
@@ -64,3 +58,13 @@ $text.addEventListener('keyup', function (event) {
         this.classList.remove("history");
     }
 })
+
+function fixWordSplit($obj) {
+    const lines = $obj.innerHTML.split("<div>");
+
+    if(lines[lines.length - 1] != "<br></div>"){
+        $obj.removeChild($obj.lastChild);
+        $obj.removeChild($obj.lastChild);
+        $obj.innerHTML += (lines.length > 2 ? "<div>" + command + "</div>" : command + "&nbsp;") + "<div><br></div>";
+    }
+}

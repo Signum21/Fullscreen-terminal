@@ -60,10 +60,10 @@ export const myConsole = {
                     else if(commands[1] == "-c" || commands[1] == "--clear"){
                         this.history = [];
                         this.historyPos = 0;
-                        return "Command history emptied";
+                        return "Command history cleared";
                     }
                     else if(commands[1] == "--help"){
-                        return "The history command takes these parameters: \n-l or --length ~ Print history length \n-c or --clear ~ Empty the command history";
+                        return "The history command takes these parameters: \n-l or --length ~ Print history length \n-c or --clear ~ Clear the command history";
                     }
                     return "Parameter of the history command not recognised"
                 }
