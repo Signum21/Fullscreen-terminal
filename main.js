@@ -1,4 +1,4 @@
-import { myConsole } from "./$objects.js";
+import { myConsole } from "./objects.js";
 
 const $text = document.getElementById("text");
 $text.setAttribute("data-content", myConsole.pre);
